@@ -51,3 +51,11 @@ def n_search(words, inv_matrix, query):
     final_answer = key
     return final_answer
     
+def main():
+    texts = make_texts()
+    words, inv_matrix = make_words (texts)
+    n_search(words, inv_matrix, query)
+    return
+
+if __name__ == "__main__":
+    main()
