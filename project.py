@@ -8,7 +8,7 @@ def make_data():
     docs = {}
     i = 0
     for el in texts:
-       data[i] = el
+       docs[i] = el
        i = i+1
     return docs
 
