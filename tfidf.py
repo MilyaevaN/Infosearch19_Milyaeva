@@ -57,36 +57,3 @@ def search(word, index) -> Union[List[Tuple[int, int]], None]:
         return index[word]
     except KeyError:
         return None
-
-
-##index = tf_idf({
-##    0: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
-##         'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-##    1: 'Wikipedia ((About this soundlisten) wik-ih-PEE-dee-ə or '
-##         '(About this soundlisten) wik-ee-PEE-dee-ə) is a multilingual '
-##         'online encyclopedia created and maintained as an open collaboration project[4] '
-##         'by a community of volunteer editors using a wiki-based editing system.[5]',
-##    2: 'Wikipedia was launched on January 15, 2001, by Jimmy Wales and Larry Sanger.[14] '
-##         'Sanger coined its name,[15][16] as a portmanteau of "wiki" (the Hawaiian word for '
-##         '"quick"[17]) and "encyclopedia". Initially an English-language encyclopedia, versions '
-##         'of Wikipedia in other languages were quickly developed.',
-##    3: 'Python is an interpreted, high-level, general-purpose programming language. Created by '
-##         'Guido van Rossum and first released in 1991, Python\'s design philosophy emphasizes code '
-##         'readability with its notable use of significant whitespace. Its language constructs and '
-##         'object-oriented approach aim to help programmers write clear, logical code for small and '
-##         'large-scale projects.[28] ',
-##})
-##
-##pprint(index)
-##try:
-##    while True:
-##        word = input('Search word: ')
-##        res = search(word, index)
-##        if not res:
-##            print('Word not found')
-##            continue
-##        print('Index    Correlate')
-##        for i in res:
-##            print(f'{i:<8} {res[i]:3e}')
-##except KeyboardInterrupt:
-##    pass
