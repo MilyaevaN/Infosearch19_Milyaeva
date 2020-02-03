@@ -15,8 +15,20 @@ def make_data():
 docs = make_data()
 index = tf_idf(docs)
 
-app = Flask(__name__)
+def make_data2():
+    f = open('sents.txt', 'r', encoding = 'utf-8')
+    texts = f.readlines()
+    f.close()
+    docs2 = {}
+    i = 0
+    for el in texts:
+       docs2[i] = el
+       i = i+1
+    return docs2
 
+docs2 = make_data2()
+
+app = Flask(__name__)
 
 @app.route('/')
 def main():
@@ -30,7 +42,7 @@ def main():
         '<table>'
         '<tr><th>Index</th><th>Correlate</th><th>Document</th></tr>'
         '{%for i in res%}'
-        '<tr><td>{{i}}</td><td>{{res[i]}}</td><td>{{docs[i]}}</td></tr>'
-        '{%endfor%}</table>', res=res, index=index, docs=docs)
+        '<tr><td>{{i}}</td><td>{{res[i]}}</td><td>{{docs2[i]}}</td></tr>'
+        '{%endfor%}</table>', res=res, index=index, docs2=docs2)
  
 app.run()
