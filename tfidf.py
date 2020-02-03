@@ -29,7 +29,7 @@ def idf(word: str, docs: Dict[Any, List[str]], cache_idf: Union[Dict, None]) -> 
 
 def document_preflight(doc: str) -> List[str]:
     doc = doc.lower().split()
-    doc = map(lambda word: subn(r"^\W*([a-z-]+?)\W*$", r"\g<1>", word), doc)
+    doc = map(lambda word: subn(r"^\W*([a-zа-яё-]+?)\W*$", r"\g<1>", word), doc)
     doc = [res[0] for res in doc if res[1] and len(res[0])]
     # TODO: Add stopwords
     return doc
