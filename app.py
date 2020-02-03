@@ -18,7 +18,7 @@ index = tf_idf(docs)
 app = Flask(__name__)
 
 
-@app.route('/project')
+@app.route('/')
 def main():
     word = request.args.get('q')
     if not word:
